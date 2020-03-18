@@ -12,7 +12,7 @@ actions:
 
 responses:
   utter_greet:
-  - text: "Hello there! How can I help?"
+  - text: "Hello there! I am the Boulder Bot. How can I help? 🧗‍♀️"
 
   utter_goodbye:
   - text: "Bye"
