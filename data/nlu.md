@@ -44,19 +44,19 @@
 - is there a correspondance between grade systems?
 - is there an equivalence between the different bouldering grade systems?
 
-## intent: faq_system/ask_grade_system_v
+## intent:faq_system/ask_grade_system_v
 - how does the V scale work?
 - can you explain the V scale to me?
 
-## intent: faq_system/ask_grade_system_fontainebleau
+## intent:faq_system/ask_grade_system_fontainebleau
 - how do the Fontainebleau grades work?
 - can you explain the Fontainebleau grades to me?
 
-## intent: faq_system/ask_grade_system_dankyu
+## intent:faq_system/ask_grade_system_dankyu
 - how does the Japanese Dankyu system work?
 - can you explain the Japanese Dankyu system to me?
 
-## intent: faq_system/ask_grade_system_uk
+## intent:faq_system/ask_grade_system_uk
 - how do the UK technical grades work?
 - can you explain the UK technical grades to me?
 
