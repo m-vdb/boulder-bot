@@ -796,7 +796,6 @@ pyasn1 = ">=0.4.6,<0.5.0"
 [[package]]
 category = "main"
 description = "C parser in Python"
-marker = "sys_platform == \"win32\" and platform_python_implementation == \"CPython\""
 name = "pycparser"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
@@ -1065,7 +1064,7 @@ twilio = ">=6.26,<6.27"
 webexteamssdk = ">=1.1.1,<1.2.0"
 
 [package.dependencies.pymongo]
-extras = ["tls", "srv"]
+extras = ["srv", "tls"]
 version = ">=3.8.0,<3.9.0"
 
 [package.extras]
@@ -1438,7 +1437,7 @@ description = "TensorFlow Estimator."
 name = "tensorflow-estimator"
 optional = false
 python-versions = "*"
-version = "2.2.0rc0"
+version = "2.1.0"
 
 [[package]]
 category = "main"
@@ -1659,7 +1658,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["jaraco.itertools", "func-timeout"]
 
 [metadata]
-content-hash = "d8613beab4286a5163b45c4ee27975b14ce59307959efb3d2bbe77826f0f96c7"
+content-hash = "3fee8b70d7d89cf49049ca258c194d1b5162eeb6281f053f2edcc4cec13c69f9"
 python-versions = "^3.7"
 
 [metadata.files]
@@ -2568,7 +2567,7 @@ tensorflow-addons = [
     {file = "tensorflow_addons-0.8.3-cp37-cp37m-win_amd64.whl", hash = "sha256:7e7d882f2c280b503f5ab4c4f1f139e528557775e0110ae6ed413857d02789b1"},
 ]
 tensorflow-estimator = [
-    {file = "tensorflow_estimator-2.2.0rc0-py2.py3-none-any.whl", hash = "sha256:c24aba63b33de5db089e66585399e1abefad75038c4aacca8d8d1328ab3e8282"},
+    {file = "tensorflow_estimator-2.1.0-py2.py3-none-any.whl", hash = "sha256:e5c5f648a636f18d1be4cf7ed46132b108a2f0f3fd9f1c850eba924263dc6972"},
 ]
 tensorflow-hub = [
     {file = "tensorflow_hub-0.7.0-py2.py3-none-any.whl", hash = "sha256:52a3fa4d2b7d9a8a5c61d88b43086964ccfd48b6eb3986c502c09e6f6862e233"},
