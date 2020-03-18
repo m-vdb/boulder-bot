@@ -1064,7 +1064,7 @@ twilio = ">=6.26,<6.27"
 webexteamssdk = ">=1.1.1,<1.2.0"
 
 [package.dependencies.pymongo]
-extras = ["srv", "tls"]
+extras = ["tls", "srv"]
 version = ">=3.8.0,<3.9.0"
 
 [package.extras]
@@ -1658,7 +1658,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["jaraco.itertools", "func-timeout"]
 
 [metadata]
-content-hash = "3fee8b70d7d89cf49049ca258c194d1b5162eeb6281f053f2edcc4cec13c69f9"
+content-hash = "e93763732afc495b89b39b3bf17af559710004937debcfa9fbba58cf7364d8ae"
 python-versions = "^3.7"
 
 [metadata.files]

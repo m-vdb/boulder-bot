@@ -9,6 +9,7 @@ license = "MIT"
 python = "^3.7"
 rasa = "^1.8.1"
 tensorflow-estimator = "2.1.0"
+rasa-sdk = "^1.8.1"
 
 [tool.poetry.dev-dependencies]
 
