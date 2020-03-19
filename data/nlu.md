@@ -5,6 +5,8 @@
 - good morning
 - good evening
 - hey there
+- hello!
+- Hello!
 
 ## intent:goodbye
 - goodbye
@@ -23,6 +25,7 @@
 - of course
 - that sounds good
 - correct
+- nice
 
 ## intent:deny
 - no
@@ -37,6 +40,7 @@
 - how many different grade systems are there?
 - what are the different bouldering grade systems?
 - what are the different grade systems in bouldering?
+- I want to learn about bouldering grade systems
 
 ## intent:compare_grade_systems
 - how do the grade systems compare?
@@ -60,33 +64,37 @@
 - how do the UK technical grades work?
 - can you explain the UK technical grades to me?
 
-## synonym:V scale
-- V grades
-- V system
-- Vermin scale
-- Vermin grades
-- Vermin system
-- Hueco scale
-- Hueco grades
-- Hueco system
-- US grades
-- US system
-
-## synonym:Fontainebleau system
-- Fontainebleau grades
-- French grades
-- French system
+## intent:faq_system
+- can you give me some details about the UK tech grades?
+- Can you explain the UK system?
 
 ## synonym:Dankyu system
-- Japanese Dankyu system
+- Japanese grades
 - Japanese Dankyu grades
 - Japanese system
-- Japanese grades
+- Japanese Dankyu system
 - Dankyu grades
 
+## synonym:Fontainebleau system
+- French grades
+- Fontainebleau grades
+- French system
+
 ## synonym:UK system
-- UK technical grades
-- United Kingdom technical grades
-- UK grades
-- United Kingdom grades
 - United Kingdom system
+- UK grades
+- United Kingdom technical grades
+- UK technical grades
+- United Kingdom grades
+
+## synonym:V scale
+- Vermin grades
+- Vermin system
+- V system
+- US system
+- Hueco grades
+- V grades
+- Vermin scale
+- Hueco scale
+- Hueco system
+- US grades
