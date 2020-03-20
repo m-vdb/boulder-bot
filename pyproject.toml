@@ -12,6 +12,7 @@ tensorflow-estimator = "2.1.0"
 rasa-sdk = "^1.8.1"
 
 [tool.poetry.dev-dependencies]
+black = "^19.10b0"
 
 [build-system]
 requires = ["poetry>0.12"]
