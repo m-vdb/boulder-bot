@@ -64,9 +64,10 @@
 - how do the UK technical grades work?
 - can you explain the UK technical grades to me?
 
-## intent:faq_system
-- can you give me some details about the UK tech grades?
-- Can you explain the UK system?
+## intent:list_bouldering_techniques
+- can you list some bouldering techniques?
+- give me a list of the common bouldering techniques
+- what are the different techniques?
 
 ## synonym:Dankyu system
 - Japanese grades

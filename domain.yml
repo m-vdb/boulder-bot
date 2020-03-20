@@ -6,9 +6,11 @@ intents:
   - faq_system
   - grade_systems_list
   - compare_grade_systems
+  - list_bouldering_techniques
 
 actions:
   - respond_faq_system
+  - action_list_random_techniques
 
 responses:
   utter_greet:
@@ -23,6 +25,7 @@ responses:
   utter_systems_comparison:
   - text: "There is no consensus about an equivalence between the different grade systems, but here is one from wikipedia:"
     image: "https://rockclimbingcentral.com/wp-content/uploads/2019/06/bouldering-grading-system-1.png"
+
 
 
 session_config:

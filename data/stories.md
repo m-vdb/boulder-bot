@@ -11,3 +11,7 @@
 ## compare grading systems
 * compare_grade_systems
   - utter_systems_comparison
+
+## list bouldering techniques
+* list_bouldering_techniques
+  - action_list_random_techniques
