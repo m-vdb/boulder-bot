@@ -1,37 +1,40 @@
-intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - faq_system
-  - grade_systems_list
-  - compare_grade_systems
-  - list_bouldering_techniques
-  - thanks
-
-actions:
-  - respond_faq_system
-  - action_list_random_techniques
-
-responses:
-  utter_greet:
-  - text: "Hello there! I am the Boulder Bot. How can I help? 🧗‍♀️"
-
-  utter_goodbye:
-  - text: "Bye"
-
-  utter_your_welcome:
-  - text: "😎"
-
-  utter_grade_systems_list:
-  - text: "There are 3 main grading systems: the V scale, the Fontainebleau grades and the Dankyu system.\n\nAlso, in the UK, the UK technical grades is occasionally used."
-
-  utter_systems_comparison:
-  - text: "There is no consensus about an equivalence between the different grade systems, but here is one from wikipedia:"
-    image: "https://rockclimbingcentral.com/wp-content/uploads/2019/06/bouldering-grading-system-1.png"
-
-
-
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+intents:
+- greet
+- goodbye
+- affirm
+- deny
+- faq_system
+- grade_systems_list
+- compare_grade_systems
+- list_bouldering_techniques
+- thanks
+- faq_system/ask_grade_system_v
+- faq_system/ask_grade_system_uk
+- faq_system/ask_grade_system_dankyu
+- faq_system/ask_grade_system_fontainebleau
+responses:
+  utter_greet:
+  - text: Hello there! I am the Boulder Bot. How can I help? 🧗‍♀️
+  utter_goodbye:
+  - text: Bye
+  utter_your_welcome:
+  - text: 😎
+  utter_grade_systems_list:
+  - text: "There are 3 main grading systems: the V scale, the Fontainebleau grades\
+      \ and the Dankyu system.\n\nAlso, in the UK, the UK technical grades is occasionally\
+      \ used."
+  utter_systems_comparison:
+  - text: 'There is no consensus about an equivalence between the different grade
+      systems, but here is one from wikipedia:'
+    image: https://rockclimbingcentral.com/wp-content/uploads/2019/06/bouldering-grading-system-1.png
+actions:
+- respond_faq_system
+- action_list_random_techniques
+- utter_greet
+- utter_goodbye
+- utter_your_welcome
+- utter_grade_systems_list
+- utter_systems_comparison

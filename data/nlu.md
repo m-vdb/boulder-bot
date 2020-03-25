@@ -7,6 +7,7 @@
 - hey there
 - hello!
 - Hello!
+- hey!
 
 ## intent:goodbye
 - goodbye
@@ -18,7 +19,6 @@
 - bye bye
 - gotta go
 - farewell
-- bye bye
 
 ## intent:affirm
 - yes
@@ -41,6 +41,8 @@
 - what are the different bouldering grade systems?
 - what are the different grade systems in bouldering?
 - I want to learn about bouldering grade systems
+- I want to learn about the different bouldering grade systems
+- Can you tell me about the different bouldering grading systems?
 
 ## intent:compare_grade_systems
 - how do the grade systems compare?
@@ -68,6 +70,11 @@
 - can you list some bouldering techniques?
 - give me a list of the common bouldering techniques
 - what are the different techniques?
+- other techniques?
+- can you give me some techniques?
+- can you give me some bouldering techniques?
+- other techniques
+- I want to know about some techniques
 
 ## intent:thanks
 - thank you
@@ -77,6 +84,13 @@
 - thanks a lot
 - nice
 - super
+- thanks!
+
+## intent:faq_system
+- can you explain the UK system?
+- Can you explain the UK system?
+- ok thanks! Can you give me some details about the dankyu system?
+- can you give me some details about the UK tech grades?
 
 ## synonym:Dankyu system
 - Japanese grades
