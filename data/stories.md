@@ -19,3 +19,7 @@
 ## thanks
 * thanks
   - utter_your_welcome
+
+## goodbye
+* goodbye
+  - utter_goodbye

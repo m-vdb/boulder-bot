@@ -18,6 +18,7 @@
 - bye bye
 - gotta go
 - farewell
+- bye bye
 
 ## intent:affirm
 - yes
