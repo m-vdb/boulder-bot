@@ -25,4 +25,5 @@ jobs:
         poetry install
     - name: Test chatbot
       run: |
+        poetry run rasa train
         poetry run rasa test --fail-on-prediction-errors -s data/test_stories.md 
