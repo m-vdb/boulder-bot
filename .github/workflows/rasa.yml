@@ -1,6 +1,6 @@
 # This workflow will install Python dependencies, run chatbot tests
 
-name: Rasa chatbot
+name: Chatbot tests
 
 on:
   push:
