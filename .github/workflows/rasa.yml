@@ -19,11 +19,22 @@ jobs:
       uses: actions/setup-python@v1
       with:
         python-version: 3.7
-    - name: Install dependencies
+    - name: Install poetry
       run: |
         python -m pip install poetry
+        source $HOME/.poetry/env
+        poetry config virtualenvs.in-project true
+    - name: Set up cache
+      uses: actions/cache@v1
+      with:
+        path: .venv
+        key: venv-${{ runner.os }}-3.7-${{ hashFiles('**/poetry.lock') }}
+    - name: Install dependencies
+      run: |
+        $env:Path += ";$env:Userprofile\.poetry\bin"
         poetry install
     - name: Test chatbot
       run: |
+        $env:Path += ";$env:Userprofile\.poetry\bin"
         poetry run rasa train
         poetry run rasa test --fail-on-prediction-errors --quiet -s data/test_stories.md
