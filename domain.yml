@@ -7,6 +7,7 @@ intents:
   - grade_systems_list
   - compare_grade_systems
   - list_bouldering_techniques
+  - thanks
 
 actions:
   - respond_faq_system
@@ -18,6 +19,9 @@ responses:
 
   utter_goodbye:
   - text: "Bye"
+
+  utter_your_welcome:
+  - text: "😎"
 
   utter_grade_systems_list:
   - text: "There are 3 main grading systems: the V scale, the Fontainebleau grades and the Dankyu system.\n\nAlso, in the UK, the UK technical grades is occasionally used."

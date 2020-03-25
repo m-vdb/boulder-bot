@@ -15,3 +15,7 @@
 ## list bouldering techniques
 * list_bouldering_techniques
   - action_list_random_techniques
+
+## thanks
+* thanks
+  - utter_your_welcome

@@ -69,6 +69,15 @@
 - give me a list of the common bouldering techniques
 - what are the different techniques?
 
+## intent:thanks
+- thank you
+- thanks
+- great
+- thanks for your help
+- thanks a lot
+- nice
+- super
+
 ## synonym:Dankyu system
 - Japanese grades
 - Japanese Dankyu grades
