@@ -97,6 +97,7 @@
 - I want to climb today
 - I wanna climb
 - Are there gyms around me?
+- I would like to climb [today](time)
 
 ## intent:inform
 - hmmm, [today](time)
