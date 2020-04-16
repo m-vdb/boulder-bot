@@ -4,9 +4,10 @@
 # See this guide on how to implement these action:
 # https://rasa.com/docs/rasa/core/actions/#custom-actions/
 import random
-from typing import Any, Text, Dict, List
+from typing import Any, Text, Dict, List, Union
 
 from rasa_sdk import Action, Tracker
+from rasa_sdk.forms import FormAction
 from rasa_sdk.executor import CollectingDispatcher
 
 
@@ -43,6 +44,36 @@ class ActionHelloWorld(Action):
     ) -> List[Dict[Text, Any]]:
 
         techniques = random.choices(TECHNIQUES, k=5)
-        dispatcher.utter_message(text=f"Here are some common bouldering techniques: {', '.join(techniques)}.")
+        dispatcher.utter_message(
+            text=f"Here are some common bouldering techniques: {', '.join(techniques)}."
+        )
 
         return []
+
+
+class GymForm(FormAction):
+    def name(self) -> Text:
+        return "gym_form"
+
+    @staticmethod
+    def required_slots(tracker: Tracker) -> List[Text]:
+        return ["gym_form_when", "gym_form_location"]
+
+    def submit(
+        self,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ) -> List[Dict]:
+        # utter submit template
+        dispatcher.utter_message(text="Cool, you can go to Berta Block!")
+        return []
+
+    def slot_mappings(self) -> Dict[Text, Union[Dict, List[Dict]]]:
+        """
+        Map the slots to entities.
+        """
+        return {
+            "gym_form_when": self.from_entity(entity="time"),
+            "gym_form_location": self.from_entity(entity="GPE"),
+        }

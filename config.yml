@@ -1,5 +1,14 @@
 language: en
 pipeline:
+- name: "SpacyNLP"
+  model: "en_core_web_md"
+- name: DucklingHTTPExtractor
+  url: "http://localhost:8000"
+  dimensions: ["time"]
+  timezone: "Europe/Berlin"
+  timeout : 3
+- name: "SpacyEntityExtractor"
+  dimensions: ["GPE"]
 - name: WhitespaceTokenizer
 - name: RegexFeaturizer
 - name: LexicalSyntacticFeaturizer
@@ -19,3 +28,4 @@ policies:
   max_history: 5
   epochs: 100
 - name: MappingPolicy
+- name: FormPolicy

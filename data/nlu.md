@@ -92,6 +92,21 @@
 - ok thanks! Can you give me some details about the dankyu system?
 - can you give me some details about the UK tech grades?
 
+## intent:wanna_climb
+- I want to climb
+- I want to climb today
+- I wanna climb
+- Are there gyms around me?
+
+## intent:inform
+- hmmm, [today](time)
+- definitely [today](time)
+- [tomorrow](time) maybe
+- [now](time)
+- [next week](time)
+- I'd like to climb [today](time)
+- I would love to boulder [tomorrow](time)
+
 ## synonym:Dankyu system
 - Japanese grades
 - Japanese Dankyu grades

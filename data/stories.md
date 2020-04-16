@@ -23,3 +23,11 @@
 ## goodbye
 * goodbye
   - utter_goodbye
+
+## gym form
+* wanna_climb
+    - gym_form
+    - form{"name": "gym_form"}
+    - slot{"gym_form_when": "today"}
+    - slot{"gym_form_location": "berlin"}
+    - form{"name": null}

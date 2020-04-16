@@ -11,10 +11,20 @@ intents:
 - compare_grade_systems
 - list_bouldering_techniques
 - thanks
+- inform
+- wanna_climb
 - faq_system/ask_grade_system_v
 - faq_system/ask_grade_system_uk
 - faq_system/ask_grade_system_dankyu
 - faq_system/ask_grade_system_fontainebleau
+entities:
+- time  # from DucklingHTTPExtractor
+- GPE  # from SpacyEntityExtractor
+slots:
+  gym_form_when:
+    type: unfeaturized
+  gym_form_location:
+    type: unfeaturized
 responses:
   utter_greet:
   - text: Hello there! I am the Boulder Bot. How can I help? 🧗‍♀️
@@ -30,6 +40,12 @@ responses:
   - text: 'There is no consensus about an equivalence between the different grade
       systems, but here is one from wikipedia:'
     image: https://rockclimbingcentral.com/wp-content/uploads/2019/06/bouldering-grading-system-1.png
+  utter_ask_gym_form_location:
+  - text: Cool. Where?
+  utter_ask_gym_form_when:
+  - text: When?
+forms:
+- gym_form
 actions:
 - respond_faq_system
 - action_list_random_techniques
