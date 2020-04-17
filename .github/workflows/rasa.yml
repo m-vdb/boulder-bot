@@ -31,6 +31,8 @@ jobs:
     - name: Install dependencies
       run: |
         poetry install
+        poetry run python -m spacy download en_core_web_md
+        poetry run python -m spacy link en_core_web_md en
     - name: Test chatbot
       run: |
         poetry run rasa train
