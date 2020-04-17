@@ -9,6 +9,7 @@ license = "MIT"
 python = "^3.7"
 rasa = "^1.9.0"
 rasa-sdk = "^1.8.1"
+spacy = "2.1.9"
 
 [tool.poetry.dev-dependencies]
 black = "^19.10b0"
