@@ -4,7 +4,7 @@
 
 ## ask Fontainebleau system
 * faq_system/ask_grade_system_fontainebleau
-  - The Fontainebleau grading is widely used in Europe. It's an open-ended numerical system that goes from 1A,1B,1C to 9A and it has been linked to a colour coded system since 1960. The colours have changed throught the years but seem to be established since the year 2000.
+  - The Fontainebleau grading is widely used in Europe. It's an open-ended numerical system that goes from 1A,1B,1C to 9A and it has been linked to a colour coded system since 1960. The colours have changed throughout the years but seem to be established since the year 2000.
 
 ## ask Dankyu system
 * faq_system/ask_grade_system_dankyu
