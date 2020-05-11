@@ -8,6 +8,7 @@
 - hello!
 - Hello!
 - hey!
+- Hello good sir
 
 ## intent:goodbye
 - goodbye
@@ -98,6 +99,7 @@
 - I wanna climb
 - Are there gyms around me?
 - I would like to climb [today](time)
+- i wanna climb
 
 ## intent:inform
 - hmmm, [today](time)
