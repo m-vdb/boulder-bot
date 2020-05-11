@@ -44,6 +44,8 @@ responses:
   - text: Cool. Where?
   utter_ask_gym_form_when:
   - text: When?
+  utter_default:
+  - text: Sorry mate, I dunno what you mean 😫
 forms:
 - gym_form
 actions:
