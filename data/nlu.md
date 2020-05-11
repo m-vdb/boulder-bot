@@ -9,6 +9,8 @@
 - Hello!
 - hey!
 - Hello good sir
+- hey you
+- [hey yaaaa](time)
 
 ## intent:goodbye
 - goodbye
