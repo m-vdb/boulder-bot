@@ -10,7 +10,8 @@
 - hey!
 - Hello good sir
 - hey you
-- [hey yaaaa](time)
+- hey yaaaa
+- hey buddy what's up?
 
 ## intent:goodbye
 - goodbye
@@ -111,6 +112,7 @@
 - [next week](time)
 - I'd like to climb [today](time)
 - I would love to boulder [tomorrow](time)
+- [today](time)[today](time)
 
 ## synonym:Dankyu system
 - Japanese grades
