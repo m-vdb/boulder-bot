@@ -18,12 +18,14 @@ intents:
 - faq_system/ask_grade_system_dankyu
 - faq_system/ask_grade_system_fontainebleau
 entities:
-- time  # from DucklingHTTPExtractor
-- GPE  # from SpacyEntityExtractor
+- time
+- GPE
 slots:
+  gym_form_location:
+    type: unfeaturized
   gym_form_when:
     type: unfeaturized
-  gym_form_location:
+  requested_slot:
     type: unfeaturized
 responses:
   utter_greet:
@@ -33,9 +35,9 @@ responses:
   utter_your_welcome:
   - text: 😎
   utter_grade_systems_list:
-  - text: "There are 3 main grading systems: the V scale, the Fontainebleau grades\
-      \ and the Dankyu system.\n\nAlso, in the UK, the UK technical grades is occasionally\
-      \ used."
+  - text: 'There are 3 main grading systems: the V scale, the Fontainebleau grades
+      and the Dankyu system.\n\nAlso, in the UK, the UK technical grades is occasionally
+      used.'
   utter_systems_comparison:
   - text: 'There is no consensus about an equivalence between the different grade
       systems, but here is one from wikipedia:'
@@ -46,8 +48,6 @@ responses:
   - text: When?
   utter_default:
   - text: Sorry mate, I dunno what you mean 😫
-forms:
-- gym_form
 actions:
 - respond_faq_system
 - action_list_random_techniques
@@ -56,3 +56,8 @@ actions:
 - utter_your_welcome
 - utter_grade_systems_list
 - utter_systems_comparison
+- utter_ask_gym_form_location
+- utter_ask_gym_form_when
+- utter_default
+forms:
+- gym_form
