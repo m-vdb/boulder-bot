@@ -58,4 +58,4 @@ jobs:
         env:
           RASA_X_DOMAIN: ${{ secrets.RASA_X_DOMAIN }}
           RASA_X_API_TOKEN: ${{ secrets.RASA_X_API_TOKEN }}
-        run: curl --fail -k -F "model=@new_model.tar.gz" "https://$RASA_X_DOMAIN/api/projects/default/models?api_token=$RASA_X_API_TOKEN"
+        run: curl --fail --progress-bar -k -F "model=@new_model.tar.gz" "https://$RASA_X_DOMAIN/api/projects/default/models?api_token=$RASA_X_API_TOKEN"
