@@ -117,11 +117,12 @@
 - [today](time)
 
 ## intent:query_knowledge_base
-- what [gyms](object_type:gym) are there?
-- Are there any [gyms](object_type:gym) in [Pankow](attribute:neighborhood)?
-- Are there any [outdoor](attribute:has_outdoor) [gyms](object_type:gym)?
-- can I go climbing for less than [10](attribute:price) euros?
-- does [it](mention) have an [outdoor area](attribute:has_outdoor)?
+- what [gyms]{"entity": "object_type", "value": "gym"} are there?
+- Are there any [gyms]{"entity": "object_type", "value": "gym"} in [Pankow]{"entity": "attribute", "value": "neighborhood"}?
+- Are there any [outdoor]{"entity": "attribute", "value": "has_outdoor"} [gyms]{"entity": "object_type", "value": "gym"}?
+- can I go climbing for less than [10]{"entity": "attribute", "value": "price"} euros?
+- does [it]{"entity": "mention"} have an [outdoor area]{"entity": "attribute", "value": "has_outdoor"}?
+- [how much]{"entity": "attribute", "value": "price"} is [it]{"entity": "mention"}?
 
 
 ## synonym:Dankyu system
