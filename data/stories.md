@@ -49,3 +49,12 @@
     - slot{"gym_form_location":"Berlin"}
     - form{"name":null}
     - slot{"requested_slot":null}
+
+
+## Knowledge base example
+* greet
+  - utter_greet
+* query_knowledge_base
+  - action_query_knowledge_base
+* goodbye
+  - utter_goodbye
