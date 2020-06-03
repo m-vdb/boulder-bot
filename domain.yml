@@ -57,6 +57,9 @@ responses:
   - text: When?
   utter_default:
   - text: Sorry mate, I dunno what you mean 😫
+  utter_ask_rephrase:
+  - text: "Sorry, I'm not sure I understand. Could you rephrase it?"
+  - text: "Could you please rephrase your message? I didn't quite get that."
 actions:
 - respond_faq_system
 - action_list_random_techniques
