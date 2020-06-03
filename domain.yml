@@ -20,12 +20,21 @@ intents:
 entities:
 - time
 - GPE
+- object_type
+- mention
+- attribute
 slots:
   gym_form_location:
     type: unfeaturized
   gym_form_when:
     type: unfeaturized
   requested_slot:
+    type: unfeaturized
+  object_type:
+    type: unfeaturized
+  mention:
+    type: unfeaturized
+  attribute:
     type: unfeaturized
 responses:
   utter_greet:
@@ -59,5 +68,6 @@ actions:
 - utter_ask_gym_form_location
 - utter_ask_gym_form_when
 - utter_default
+- action_query_knowledge_base
 forms:
 - gym_form
