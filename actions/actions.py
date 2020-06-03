@@ -86,10 +86,4 @@ class ActionKnowledgeBase(ActionQueryKnowledgeBase):
         # load knowledge base with data from the given file
         knowledge_base = InMemoryKnowledgeBase("knowledge_base_data.json")
 
-        # overwrite the representation function of the hotel object
-        # by default the representation function is just the name of the object
-        knowledge_base.set_representation_function_of_object(
-            "gym", lambda obj: f'{obj["name"]} ({obj["neighborhood"]})'
-        )
-
         super().__init__(knowledge_base)
