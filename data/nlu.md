@@ -100,10 +100,8 @@
 - I want to climb
 - I want to climb today
 - I wanna climb
-- Are there gyms around me?
 - I would like to climb [today](time)
 - i wanna climb
-- I wan to go to gym
 
 ## intent:inform
 - hmmm, [today](time)
@@ -122,7 +120,8 @@
 - can I go climbing for less than [10]{"entity": "attribute", "value": "price"} euros?
 - does [it]{"entity": "mention"} have an [outdoor area]{"entity": "attribute", "value": "has_outdoor"}?
 - [how much]{"entity": "attribute", "value": "price"} is [it]{"entity": "mention"}?
-
+- does [Berta Block]{"entity": "gym"} have an [outdoor area]{"entity": "attribute", "value": "has_outdoor"}?
+- [how much]{"entity": "attribute", "value": "price"} is [Berta Block]{"entity": "gym"}?
 
 ## synonym:Dankyu system
 - Japanese grades
