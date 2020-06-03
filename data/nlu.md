@@ -116,6 +116,14 @@
 - [today](time)[today](time)
 - [today](time)
 
+## intent:query_knowledge_base
+- what [gyms](object_type:gym) are there?
+- Are there any [gyms](object_type:gym) in [Pankow](attribute:neighborhood)?
+- Are there any [outdoor](attribute:has_outdoor) [gyms](object_type:gym)?
+- can I go climbing for less than [10](attribute:price) euros?
+- does [it](mention) have an [outdoor area](attribute:has_outdoor)?
+
+
 ## synonym:Dankyu system
 - Japanese grades
 - Japanese Dankyu grades
