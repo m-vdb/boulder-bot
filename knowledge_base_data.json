@@ -1,0 +1,49 @@
+{
+    "gyms": [
+        {
+            "id": 0,
+            "name": "Berta Block",
+            "neighborhood": "Pankow",
+            "has_outdoor": false,
+            "has_bar": true,
+            "price": 10,
+            "website": "http://www.bertablock.de/"
+        },
+        {
+            "id": 1,
+            "name": "Boulder Klub",
+            "neighborhood": "Kreuzberg",
+            "has_outdoor": false,
+            "has_bar": true,
+            "price": 10,
+            "website": "https://boulderklub.de/"
+        },
+        {
+            "id": 2,
+            "name": "Der Kegel",
+            "neighborhood": "Friedrichshain",
+            "has_outdoor": true,
+            "has_bar": true,
+            "price": 8,
+            "website": "https://derkegel.de/"
+        },
+        {
+            "id": 3,
+            "name": "Bright Site",
+            "neighborhood": "Schöneberg",
+            "has_outdoor": true,
+            "has_bar": true,
+            "price": 10,
+            "website": "http://www.boulder-project.de/"
+        },
+        {
+            "id": 4,
+            "name": "Südbloc",
+            "neighborhood": "Mariendorf",
+            "has_outdoor": true,
+            "has_bar": true,
+            "price": 10,
+            "website": "https://www.xn--sdbloc-3ya.de/"
+        }
+    ]
+}

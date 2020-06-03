@@ -9,6 +9,8 @@ from typing import Any, Text, Dict, List, Union
 from rasa_sdk import Action, Tracker
 from rasa_sdk.forms import FormAction
 from rasa_sdk.executor import CollectingDispatcher
+from rasa_sdk.knowledge_base.storage import InMemoryKnowledgeBase
+from rasa_sdk.knowledge_base.actions import ActionQueryKnowledgeBase
 
 
 TECHNIQUES = (
@@ -77,3 +79,17 @@ class GymForm(FormAction):
             "gym_form_when": self.from_entity(entity="time"),
             "gym_form_location": self.from_entity(entity="GPE"),
         }
+
+
+class ActionKnowledgeBase(ActionQueryKnowledgeBase):
+    def __init__(self):
+        # load knowledge base with data from the given file
+        knowledge_base = InMemoryKnowledgeBase("knowledge_base_data.json")
+
+        # overwrite the representation function of the hotel object
+        # by default the representation function is just the name of the object
+        knowledge_base.set_representation_function_of_object(
+            "gym", lambda obj: f'{obj["name"]} ({obj["neighborhood"]})'
+        )
+
+        super().__init__(knowledge_base)
