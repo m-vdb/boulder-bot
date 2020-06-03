@@ -113,7 +113,6 @@
 - [next week](time)
 - I'd like to climb [today](time)
 - I would love to boulder [tomorrow](time)
-- [today](time)[today](time)
 - [today](time)
 
 ## intent:query_knowledge_base
