@@ -26,26 +26,8 @@
 
 ## gym form
 * wanna_climb
-    - gym_form
-    - form{"name": "gym_form"}
-    - slot{"gym_form_when": "today"}
-    - slot{"gym_form_location": "berlin"}
-    - form{"name": null}
-
-## Wanna Climb today in Berlin
-
-* greet
-    - utter_greet
-* wanna_climb
-    - gym_form
-    - form{"name":"gym_form"}
-    - slot{"requested_slot":"gym_form_when"}
-* inform{"time":"today"}
-    - gym_form
-    - slot{"gym_form_when":["2020-05-13T00:00:00.000+02:00","today"]}
-    - slot{"requested_slot":"gym_form_location"}
-* faq_system{"GPE":"Berlin"}
-    - gym_form
-    - slot{"gym_form_location":"Berlin"}
-    - form{"name":null}
-    - slot{"requested_slot":null}
+  - gym_form
+  - form{"name": "gym_form"}
+  - slot{"gym_form_when": "today"}
+  - slot{"gym_form_location": "berlin"}
+  - form{"name": null}
