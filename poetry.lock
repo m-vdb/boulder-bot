@@ -917,7 +917,6 @@ pyasn1 = ">=0.4.6,<0.5.0"
 [[package]]
 category = "main"
 description = "C parser in Python"
-marker = "platform_python_implementation == \"CPython\" and sys_platform == \"win32\""
 name = "pycparser"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
@@ -1124,83 +1123,87 @@ test = ["pytest", "pytest-pycodestyle", "pytest-cov", "coveralls"]
 
 [[package]]
 category = "main"
-description = "Open source machine learning framework to automate text- and voice-based conversations: NLU, dialogue management, connect to Slack, Facebook, and more - Create chatbots and voice assistants"
+description = ""
 name = "rasa"
 optional = false
-python-versions = ">=3.6,<4.0"
-version = "1.10.1"
+python-versions = "^3.6"
+version = "1.11.0a1"
 
 [package.dependencies]
-PyJWT = ">=1.7,<1.8"
-SQLAlchemy = ">=1.3.3,<1.4.0"
-absl-py = ">=0.9,<0.10"
-aiohttp = ">=3.6,<3.7"
-apscheduler = ">=3.6,<3.7"
-async_generator = ">=1.10,<1.11"
-attrs = ">=19.3,<19.4"
-boto3 = ">=1.12,<2.0"
-cloudpickle = ">=1.2,<1.4"
-colorclass = ">=2.2,<2.3"
-coloredlogs = ">=10.0,<11.0"
-colorhash = ">=1.0.2,<1.1.0"
-fbmessenger = ">=6.0.0,<6.1.0"
-gevent = ">=1.4,<1.6"
+PyJWT = "~1.7"
+SQLAlchemy = "~1.3.3"
+absl-py = "^0.9"
+aiohttp = "~3.6"
+apscheduler = "~3.6"
+async_generator = "~1.10"
+attrs = "~19.3"
+boto3 = "^1.12"
+cloudpickle = ">=1.2,<1.5"
+colorclass = "~2.2"
+coloredlogs = "^10.0"
+colorhash = "~1.0.2"
+fbmessenger = "~6.0.0"
+gevent = ">=1.4,<20.6"
 jsonpickle = ">=1.3,<1.5"
-jsonschema = ">=3.2,<3.3"
-kafka-python = ">=1.4,<2.0"
+jsonschema = "~3.2"
+kafka-python = "^1.4"
 matplotlib = ">=3.1,<3.3"
-mattermostwrapper = ">=2.2,<2.3"
-multidict = ">=4.6,<5.0"
-networkx = ">=2.4.0,<2.5.0"
-numpy = ">=1.16,<2.0"
+mattermostwrapper = "~2.2"
+multidict = "^4.6"
+networkx = "~2.4.0"
+numpy = "^1.16"
 oauth2client = "4.1.3"
-packaging = ">=19.0,<19.1"
-pika = ">=1.1.0,<1.2.0"
-prompt-toolkit = ">=2.0,<3.0"
-psycopg2-binary = ">=2.8.2,<2.9.0"
-pydot = ">=1.4,<1.5"
-pykwalify = ">=1.7.0,<1.8.0"
-python-dateutil = ">=2.8,<2.9"
+packaging = ">=19.0,<20.4"
+pika = "~1.1.0"
+prompt-toolkit = "^2.0"
+psycopg2-binary = "~2.8.2"
+pydot = "~1.4"
+pykwalify = "~1.7.0"
+python-dateutil = "~2.8"
 python-engineio = ">=3.11,<3.13"
 python-socketio = ">=4.4,<4.6"
 python-telegram-bot = ">=11.1,<13.0"
-pytz = ">=2019.1,<2020.0"
-questionary = ">=1.5.1,<1.6.0"
-rasa-sdk = ">=1.10.0,<2.0.0"
-redis = ">=3.4,<4.0"
-requests = ">=2.23,<3.0"
+pytz = ">=2019.1,<2021.0"
+questionary = "~1.5.1"
+rasa-sdk = "^1.10.0"
+redis = "^3.4"
+requests = "^2.23"
 rocketchat_API = ">=0.6.31,<1.4.0"
-"ruamel.yaml" = ">=0.16,<0.17"
-sanic = ">=19.12.2,<20.0.0"
-sanic-cors = ">=0.10.0b1,<0.11.0"
+"ruamel.yaml" = "^0.16"
+sanic = "^19.12.2"
+sanic-cors = "^0.10.0b1"
 sanic-jwt = ">=1.3.2,<1.5.0"
-scikit-learn = ">=0.22,<0.23"
-scipy = ">=1.4.1,<2.0.0"
+scikit-learn = "^0.22"
+scipy = "^1.4.1"
 setuptools = ">=41.0.0"
-sklearn-crfsuite = ">=0.3,<0.4"
-slackclient = ">=2.0.0,<3.0.0"
-tensorflow = ">=2.1,<2.2"
-tensorflow-addons = ">=0.7.1,<0.8.0"
+sklearn-crfsuite = "~0.3"
+slackclient = "^2.0.0"
+tensorflow = "~2.1"
+tensorflow-addons = "^0.7.1"
 tensorflow-estimator = "2.1.0"
 tensorflow-probability = ">=0.7,<0.10"
 tensorflow_hub = ">=0.7,<0.9"
-terminaltables = ">=3.1.0,<3.2.0"
+terminaltables = "~3.1.0"
 tqdm = ">=4.31,<4.46"
-twilio = ">=6.26,<6.27"
+twilio = "~6.26"
 ujson = ">=1.35,<3.0"
 webexteamssdk = ">=1.1.1,<1.4.0"
 
 [package.dependencies.pymongo]
-extras = ["srv", "tls"]
-version = ">=3.8.0,<3.9.0"
+extras = ["tls", "srv"]
+version = "~3.8.0"
 
 [package.extras]
-convert = ["tensorflow_text (2.1.0rc0)"]
-full = ["jieba (0.39)", "spacy (>=2.1,<2.2)", "tensorflow_text (2.1.0rc0)", "transformers (>=2.4,<2.5)"]
-gh-release-notes = ["github3.py (>=1.3.0,<1.4.0)", "pypandoc (>=1.4,<1.5)"]
+convert = ["tensorflow_text (==2.1.0rc0)"]
+full = ["spacy (>=2.1,<2.2)", "tensorflow_text (==2.1.0rc0)", "transformers (~2.4)", "jieba (==0.39)"]
+gh-release-notes = ["pypandoc (~1.4)", "github3.py (~1.3.0)"]
 spacy = ["spacy (>=2.1,<2.2)"]
-transformers = ["transformers (>=2.4,<2.5)"]
+transformers = ["transformers (~2.4)"]
 
+[package.source]
+reference = "33c282b5a34a368aa9dda66b2b8f33bfd7f867f7"
+type = "git"
+url = "https://github.com/RasaHQ/rasa.git"
 [[package]]
 category = "main"
 description = "Open source machine learning framework to automate text- and voice-based conversations: NLU, dialogue management, connect to Slack, Facebook, and more - Create chatbots and voice assistants"
@@ -1886,7 +1889,6 @@ multidict = ">=4.0"
 [[package]]
 category = "main"
 description = "Backport of pathlib-compatible object wrapper for zip files"
-marker = "python_version < \"3.8\""
 name = "zipp"
 optional = false
 python-versions = ">=3.6"
@@ -1897,7 +1899,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["jaraco.itertools", "func-timeout"]
 
 [metadata]
-content-hash = "11ca3871bc3bace40b829f09af238c8db5ca85c979cce3b13c006ca8a0a618dd"
+content-hash = "38c66aea300173673b7b4156dc46e6b6ee25c27210a9b547bb41333154c134c6"
 python-versions = "^3.7"
 
 [metadata.files]
@@ -2695,10 +2697,7 @@ questionary = [
     {file = "questionary-1.5.2-py3-none-any.whl", hash = "sha256:6998a1fe0639daec0da44e0a973f387e7c778bdc418d76ecfa45a7b3a0997049"},
     {file = "questionary-1.5.2.tar.gz", hash = "sha256:f6e41e36b6c86fe0c3ff12a30c6c6a4e80129efba5ad0a115d71fd5df119c726"},
 ]
-rasa = [
-    {file = "rasa-1.10.1-py3-none-any.whl", hash = "sha256:d354ce08859b2338913c5ca4ed0823a710a40691423fca516f93ba1ac00d9895"},
-    {file = "rasa-1.10.1.tar.gz", hash = "sha256:e35acc3886ad57267ba264db088aa8a8236dd77e18220530f80b66baf39cb9f1"},
-]
+rasa = []
 rasa-sdk = [
     {file = "rasa-sdk-1.10.1.tar.gz", hash = "sha256:c9ed0f2843b315c0c057fb903ffbdfae9204fe519833c23db2146e029ac75c44"},
     {file = "rasa_sdk-1.10.1-py3-none-any.whl", hash = "sha256:5685a4dda8d42fe16a824ae2cf5fb84ec266bd063af2936f0f4eb4398166e94c"},

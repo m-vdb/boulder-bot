@@ -7,7 +7,7 @@ license = "MIT"
 
 [tool.poetry.dependencies]
 python = "^3.7"
-rasa = "^1.10.0"
+rasa = {git = "https://github.com/RasaHQ/rasa.git", rev = "rules"}
 rasa-sdk = "^1.10.0"
 spacy = "2.1.9"
 
