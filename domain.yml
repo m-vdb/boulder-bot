@@ -26,7 +26,11 @@ slots:
   gym_form_when:
     type: unfeaturized
   requested_slot:
-    type: unfeaturized
+    type: categorical
+    values:
+      - travel_flight_class
+      - travel_departure
+      - travel_destination
 responses:
   utter_greet:
   - text: Hello there! I am the Boulder Bot. How can I help? 🧗‍♀️
@@ -48,6 +52,8 @@ responses:
   - text: When?
   utter_default:
   - text: Sorry mate, I dunno what you mean 😫
+  utter_submit_gym_form:
+  - text: Cool, you can go to Berta Block!
 actions:
 - respond_faq_system
 - action_list_random_techniques
@@ -59,5 +65,12 @@ actions:
 - utter_ask_gym_form_location
 - utter_ask_gym_form_when
 - utter_default
+- utter_submit_gym_form
 forms:
-- gym_form
+- gym_form:
+  gym_form_when:
+    type: from_entity
+    entity: time
+  gym_form_location:
+    type: from_entity
+    entity: GPE

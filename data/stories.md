@@ -4,7 +4,8 @@
 * grade_systems_list
   - utter_grade_systems_list
 
-## detail of V scale
+>> detail of V scale
+  - ...
 * faq_system
   - respond_faq_system
 
@@ -24,10 +25,22 @@
 * goodbye
   - utter_goodbye
 
-## gym form
+>> Activate form 'gym_from'
+  - ...
 * wanna_climb
   - gym_form
   - form{"name": "gym_form"}
-  - slot{"gym_form_when": "today"}
-  - slot{"gym_form_location": "berlin"}
+
+>> submit form
+  - form{"name": "gym_form"}
+  - ...
+  - gym_form
   - form{"name": null}
+  - slot{"requested_slot": null}
+  - utter_submit_gym_form
+
+
+>> fallback story
+  - ...
+* nlu_fallback
+  - action_default_fallback
