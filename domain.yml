@@ -17,6 +17,7 @@ intents:
 - faq_system/ask_grade_system_uk
 - faq_system/ask_grade_system_dankyu
 - faq_system/ask_grade_system_fontainebleau
+- nlu_fallback
 entities:
 - time
 - GPE
