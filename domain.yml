@@ -26,11 +26,7 @@ slots:
   gym_form_when:
     type: unfeaturized
   requested_slot:
-    type: categorical
-    values:
-      - travel_flight_class
-      - travel_departure
-      - travel_destination
+    type: unfeaturized
 responses:
   utter_greet:
   - text: Hello there! I am the Boulder Bot. How can I help? 🧗‍♀️
@@ -68,9 +64,9 @@ actions:
 - utter_submit_gym_form
 forms:
 - gym_form:
-  gym_form_when:
-    type: from_entity
-    entity: time
-  gym_form_location:
-    type: from_entity
-    entity: GPE
+    gym_form_when:
+    - type: from_entity
+      entity: time
+    gym_form_location:
+    - type: from_entity
+      entity: GPE
