@@ -43,6 +43,42 @@ jobs:
           name: trained-model
           path: ./models/${{ github.sha }}.tar.gz
 
+  evaluate_model:
+    name: Evaluate NLU model
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python 3.7
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
+      - name: Install poetry
+        run: |
+          python -m pip install poetry
+          poetry config virtualenvs.in-project true
+      - name: Set up cache
+        uses: actions/cache@v1
+        with:
+          path: .venv
+          key: venv-${{ runner.os }}-3.7-${{ hashFiles('**/poetry.lock') }}
+      - name: Install dependencies
+        run: |
+          poetry install
+          poetry run python -m spacy download en_core_web_md
+          poetry run python -m spacy link en_core_web_md en --force
+      - name: Train model
+        run: |
+          poetry run rasa train
+      - name: Evalue NLU model
+        run: |
+          poetry run rasa test nlu -u data/nlu.md --config config.yml --cross-validation
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: confidence-matrix
+          path: ./results/confmat.png
+
   deploy:
     name: Deploy new model to Rasa X
     runs-on: ubuntu-latest
