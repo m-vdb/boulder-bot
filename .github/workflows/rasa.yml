@@ -44,7 +44,7 @@ jobs:
           path: ./models/${{ github.sha }}.tar.gz
 
   evaluate_model:
-    name: Evaluate NLU model
+    name: Evaluate NLU & Core model
     runs-on: ubuntu-latest
 
     steps:
@@ -73,11 +73,14 @@ jobs:
       - name: Evalue NLU model
         run: |
           poetry run rasa test nlu -u data/nlu.md --config config.yml --cross-validation
+      - name: Evalue Core model
+        run: |
+          poetry run rasa test core --stories tests/test_core_stories.md
 
       - uses: actions/upload-artifact@v2
         with:
-          name: confidence-matrix
-          path: ./results/confmat.png
+          name: model-evaluation-results
+          path: ./results/
 
   deploy:
     name: Deploy new model to Rasa X
