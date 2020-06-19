@@ -1,5 +1,4 @@
 ---
 layout: default
 ---
-Test!
-[Link to another page](./talk-to-me.html)
+To talk to Boulder Bot, click [here 🔗](./talk-to-me.html)
