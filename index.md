@@ -2,4 +2,4 @@
 layout: default
 ---
 Test!
-[Link to another page](./talk-to-me.md)
+[Link to another page](./talk-to-me.html)
