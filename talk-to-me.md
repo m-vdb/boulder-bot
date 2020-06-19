@@ -1,5 +1,6 @@
+---
 layout: page
-title: "Talk to me!"
-permalink: /talk-to-me/
+title: Talk to me!
+---
 
 <p>Hello talk to me!</p>
