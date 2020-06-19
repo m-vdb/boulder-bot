@@ -1,2 +1,4 @@
 theme: jekyll-theme-cayman
 title: Boulder Bot 🤖🧗
+exclude:
+  - README.md
