@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: Talk to me!
 permalink: /talk-to-me/
 ---
