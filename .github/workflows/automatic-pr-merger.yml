@@ -1,0 +1,39 @@
+name: Automatic master merger
+on:
+  # whenever a change is pushed to a release branch,
+  # open a pull request to merge changes down to master
+  push:
+    branches:
+    - '[0-9]+.[0-9]+.x'
+
+jobs:
+  open_pull_request:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout git repository 🕝
+        uses: actions/checkout@v2
+
+      - name: Get branch name ✍️
+        id: get-branch-name
+        run: |
+          GITHUB_BRANCH=${GITHUB_REF/refs\/tags\//}
+          echo "::set-output name=branch::${GITHUB_BRANCH}"
+      - name: Create new branch 🐣
+        uses: peterjgrainger/action-create-branch@v1.0.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          branch: merge-${{ steps.get-branch-name.outputs.branch }}
+
+      - name: Open pull request ☄️
+        uses: repo-sync/pull-request@v2
+        env:
+          GITHUB_TAG: ${GITHUB_TAG/refs\/tags\//}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          destination_branch: master
+          pr_title: Merge ${{ steps.get-branch-name.outputs.branch }} into master
+          pr_template: .github/PULL_REQUEST_AUTOMATIC_TEMPLATE.md
+          pr_label: status:ready-to-merge
+          # TODO: validate who this is. Is it the persone hitting the merge button?
+          pr_assignee: ${{ github.event.pusher }}
