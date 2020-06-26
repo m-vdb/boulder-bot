@@ -66,7 +66,7 @@ jobs:
   send_slack_notification_for_release:
     name: Notify Slack & Publish Release Notes
     runs-on: ubuntu-latest
-    if: failure()
+    if: always()
 
     needs:
       - release_docker_images
@@ -74,19 +74,12 @@ jobs:
       - publish_pypi_community
 
     steps:
+    - uses: technote-space/workflow-conclusion-action@v1
+
     - name: Running send_slack_notification_for_release
       run: echo "> SUCCESS"
+      if: env.WORKFLOW_CONCLUSION == 'success'
 
-  send_slack_notification_on_failure:
-    name: Notify Slack & Publish Release Notes
-    runs-on: ubuntu-latest
-    if: failure()
-
-    needs:
-      - release_docker_images
-      - publish_pypi_enterprise
-      - publish_pypi_community
-
-    steps:
     - name: Running send_slack_notification_failure
       run: echo "> FAILURE"
+      if: env.WORKFLOW_CONCLUSION == 'failure'
