@@ -1,0 +1,92 @@
+name: Test Continuous Integration
+on:
+  star:
+
+
+jobs:
+  test_job_a:
+    name: Test Job A
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Running test_job_a
+      run: echo "> test_job_a"
+
+    - name: Failing
+      run: exit 1
+
+    - name: Stuff
+      if: failure()
+      run: echo "I failed"
+
+  test_job_b:
+    name: Test Job B
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Running test_job_b
+      run: echo "> test_job_b"
+
+  publish_pypi_community:
+    name: Publish Rasa X Community to PyPI
+    runs-on: ubuntu-latest
+
+    needs:
+      - test_job_a
+      - test_job_b
+
+    steps:
+    - name: Running publish_pypi_community
+      run: echo "> publish pypi community"
+
+  publish_pypi_enterprise:
+    name: Publish Rasa X Enterprise to PyPI
+    runs-on: ubuntu-latest
+
+    needs:
+      - test_job_a
+      - test_job_b
+
+    steps:
+    - name: Running publish_pypi_enterprise
+      run: echo "> publish pypi enterprise"
+
+  release_docker_images:
+    name: Tag and push Docker images
+    runs-on: ubuntu-latest
+
+    needs:
+      - test_job_a
+      - test_job_b
+
+    steps:
+    - name: Running release_docker_images
+      run: echo "> Release docker image"
+
+  send_slack_notification_for_release:
+    name: Notify Slack & Publish Release Notes
+    runs-on: ubuntu-latest
+    if: failure()
+
+    needs:
+      - release_docker_images
+      - publish_pypi_enterprise
+      - publish_pypi_community
+
+    steps:
+    - name: Running send_slack_notification_for_release
+      run: echo "> SUCCESS"
+
+  send_slack_notification_on_failure:
+    name: Notify Slack & Publish Release Notes
+    runs-on: ubuntu-latest
+    if: failure()
+
+    needs:
+      - release_docker_images
+      - publish_pypi_enterprise
+      - publish_pypi_community
+
+    steps:
+    - name: Running send_slack_notification_failure
+      run: echo "> FAILURE"
