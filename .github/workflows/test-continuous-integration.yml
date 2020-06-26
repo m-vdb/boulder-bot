@@ -1,6 +1,6 @@
 name: Test Continuous Integration
 on:
-  star:
+  watch:
 
 
 jobs:
