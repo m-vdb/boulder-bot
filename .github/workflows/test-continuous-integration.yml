@@ -68,7 +68,7 @@ jobs:
   send_slack_notification_for_release:
     name: Notify Slack & Publish Release Notes
     runs-on: ubuntu-latest
-    if: "always() && env.IS_TAG_BUILD == 'true'"
+    if: always() && ${{ env.IS_TAG_BUILD }} == 'true'
 
     needs:
       - release_docker_images
