@@ -1,17 +1,33 @@
 name: Automatic master merger
 on:
-  # whenever a change is pushed to a release branch,
+  # whenever a pull request is merged into a release branch,
   # open a pull request to merge changes down to master
-  push:
+  pull_request:
     branches:
     - '[0-9]+.[0-9]+.x'
+
+    types:
+    # means that the PR is closed, we still have to check if it was merged
+    - closed
+
+env:
+  LABEL_TYPE: type:release-branch-port
+  LABEL_STATUS: status:ready-to-merge
 
 jobs:
   open_pull_request:
     runs-on: ubuntu-latest
+
+    # only run this workflow if a pull request has been merged
+    if: github.event.pull_request.merged == true
+
     steps:
       - name: Checkout git repository 🕝
         uses: actions/checkout@v2
+
+      - name: Fetch git tags 🎨
+        # see https://github.com/actions/checkout/issues/206#issuecomment-617937725
+        run: git fetch --prune --unshallow --tags
 
       - name: Get branch name ✍️
         id: get-branch-name
@@ -27,6 +43,28 @@ jobs:
         with:
           branch: ${{ steps.get-branch-name.outputs.new_branch }}
 
+      - name: Get GitHub labels 🏷
+        id: get-github-labels
+        run: |
+          LATEST_RASA_X_MINOR=$(git tag --list | grep -P '^\d+\.\d+\.\d+$' | tail -n1 | sed -e 's/\.\([0-9]\)*$/.0/g')
+          LIST=$(git tag --list)
+          echo $LIST
+          echo "latest minor: ${LATEST_RASA_X_MINOR}"
+
+
+          # bash doesn't support nested variable access
+          CURRENT_RASA_X_MINOR=${GITHUB_REF/refs\/heads\//}
+          CURRENT_RASA_X_MINOR=${CURRENT_RASA_X_MINOR/\.x/\.0}
+
+          echo "Current minor: ${CURRENT_RASA_X_MINOR}"
+
+          if [[ ${LATEST_RASA_X_MINOR} == ${CURRENT_RASA_X_MINOR} ]]
+          then
+            echo "::set-output name=labels::${LABEL_TYPE},${LABEL_STATUS}"
+          else
+            echo "::set-output name=labels::${LABEL_TYPE}"
+          fi
+
       - name: Open pull request ☄️
         uses: repo-sync/pull-request@v2
         with:
@@ -35,5 +73,8 @@ jobs:
           destination_branch: master
           pr_title: Merge ${{ steps.get-branch-name.outputs.release_branch }} into master
           pr_template: .github/PULL_REQUEST_AUTOMATIC_TEMPLATE.md
-          pr_label: status:ready-to-merge
-          pr_reviewer: ${{ github.event.pusher.name }}
+          pr_label: ${{ steps.get-github-labels.outputs.labels }}
+          pr_reviewer: ${{ github.event.pull_request.user.login }}
+
+
+# some comment
