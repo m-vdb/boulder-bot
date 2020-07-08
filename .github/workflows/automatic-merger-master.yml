@@ -1,10 +1,14 @@
 name: Automatic master merger
 on:
-  # whenever a change is pushed to a release branch,
+  # whenever a pull request is merged into a release branch,
   # open a pull request to merge changes down to master
-  push:
+  pull_request:
     branches:
     - '[0-9]+.[0-9]+.x'
+
+    types:
+    # means that the PR is closed, we still have to check if it was merged
+    - closed
 
 env:
   LABEL_TYPE: type:release-branch-port
@@ -13,11 +17,16 @@ env:
 jobs:
   open_pull_request:
     runs-on: ubuntu-latest
+
+    # only run this workflow if a pull request has been merged
+    if: github.event.pull_request.merged == true
+
     steps:
       - name: Checkout git repository 🕝
         uses: actions/checkout@v2
 
       - name: Fetch git tags 🎨
+        # see https://github.com/actions/checkout/issues/206#issuecomment-617937725
         run: git fetch --prune --unshallow --tags
 
       - name: Get branch name ✍️
@@ -65,4 +74,4 @@ jobs:
           pr_title: Merge ${{ steps.get-branch-name.outputs.release_branch }} into master
           pr_template: .github/PULL_REQUEST_AUTOMATIC_TEMPLATE.md
           pr_label: ${{ steps.get-github-labels.outputs.labels }}
-          pr_reviewer: ${{ github.event.pusher.name }}
+          pr_reviewer: ${{ github.event.pull_request.user.login }}
