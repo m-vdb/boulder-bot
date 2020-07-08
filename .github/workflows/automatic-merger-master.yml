@@ -34,7 +34,17 @@ jobs:
       - name: Get GitHub labels 🏷
         id: get-github-labels
         run: |
-          echo "::set-output name=labels::${LABEL_TYPE},${LABEL_STATUS}"
+          LATEST_RASA_X_MINOR=$(git tag --list | grep -E '^\d+\.\d+\.\d+$' | tail -n1 | sed -e 's/.\([0-9]\)*$/.0/g')
+          # bash doesn't support nested variable access
+          CURRENT_RASA_X_MINOR=${GITHUB_REF/refs\/heads\//}
+          CURRENT_RASA_X_MINOR=${CURRENT_RASA_X_MINOR/\.x/\.0}
+
+          if [[ ${LATEST_RASA_X_MINOR} == ${CURRENT_RASA_X_MINOR} ]]
+          then
+            echo "::set-output name=labels::${LABEL_TYPE},${LABEL_STATUS}"
+          else
+            echo "::set-output name=labels::${LABEL_TYPE}"
+          fi
 
       - name: Open pull request ☄️
         uses: repo-sync/pull-request@v2
