@@ -35,7 +35,8 @@ jobs:
         id: get-github-labels
         run: |
           LATEST_RASA_X_MINOR=$(git tag --list | grep -E '^\d+\.\d+\.\d+$' | tail -n1 | sed -e 's/.\([0-9]\)*$/.0/g')
-          git tag --list
+          LIST=$(git tag --list)
+          echo $LIST
           echo "latest minor: ${LATEST_RASA_X_MINOR}"
 
 
