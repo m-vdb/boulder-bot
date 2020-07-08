@@ -6,6 +6,10 @@ on:
     branches:
     - '[0-9]+.[0-9]+.x'
 
+env:
+  LABEL_TYPE: type:release-branch-port
+  LABEL_STATUS: status:ready-to-merge
+
 jobs:
   open_pull_request:
     runs-on: ubuntu-latest
@@ -27,6 +31,11 @@ jobs:
         with:
           branch: ${{ steps.get-branch-name.outputs.new_branch }}
 
+      - name: Get GitHub labels 🏷
+        id: get-github-labels
+        run: |
+          echo "::set-output name=labels::${LABEL_TYPE},${LABEL_STATUS}"
+
       - name: Open pull request ☄️
         uses: repo-sync/pull-request@v2
         with:
@@ -35,5 +44,5 @@ jobs:
           destination_branch: master
           pr_title: Merge ${{ steps.get-branch-name.outputs.release_branch }} into master
           pr_template: .github/PULL_REQUEST_AUTOMATIC_TEMPLATE.md
-          pr_label: status:ready-to-merge
+          pr_label: ${{ steps.get-github-labels.outputs.labels }}
           pr_reviewer: ${{ github.event.pusher.name }}
