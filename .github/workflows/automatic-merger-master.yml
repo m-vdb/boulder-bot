@@ -35,6 +35,11 @@ jobs:
         id: get-github-labels
         run: |
           LATEST_RASA_X_MINOR=$(git tag --list | grep -E '^\d+\.\d+\.\d+$' | tail -n1 | sed -e 's/.\([0-9]\)*$/.0/g')
+          git remote -v
+          echo "latest minor: ${LATEST_RASA_X_MINOR}"
+          git remote set-url origin "git@github.com:${{ github.repository }}"
+          git remote -v
+          LATEST_RASA_X_MINOR=$(git tag --list | grep -E '^\d+\.\d+\.\d+$' | tail -n1 | sed -e 's/.\([0-9]\)*$/.0/g')
           echo "latest minor: ${LATEST_RASA_X_MINOR}"
 
           # bash doesn't support nested variable access
